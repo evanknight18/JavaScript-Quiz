@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Scores</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>High Scores</h1>
+  <div id="high-scores-list"></div>
+  <button id="clear-scores">Clear Scores</button>
+  <button id="go-back">Go Back</button>
+
+  <script>
+    const highScoresList = document.getElementById("high-scores-list");
+    const clearScoresBtn = document.getElementById("clear-scores");
+    const goBackBtn = document.getElementById("go-back");
+
+    function loadHighScores() {
+      const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+      highScoresList.innerHTML = highScores
+        .map(score => `<li>${score.initials} - ${score.score}</li>`)
+        .join("");
+    }
+
+    clearScoresBtn.addEventListener("click", () => {
+      localStorage.removeItem("highScores");
+      loadHighScores();
+    });
+
+    goBackBtn.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+
+    loadHighScores();
+  </script>
+</body>
+</html>
