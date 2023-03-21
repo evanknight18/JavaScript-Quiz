@@ -1,8 +1,8 @@
 const quizData = [
     {
-      question: "What is the file extension for a JavaScript file?",
-      answers: ["js", "html", "css", "txt"],
-      correctAnswerIndex: 0
+      question: "Commonly used data types DO NOT include:",
+      answers: ["strings", "boolean", "alerts", "numbers"],
+      correctAnswerIndex: 2
     },
     {
       question: "Which keyword is used to declare a variable in JavaScript?",
@@ -15,9 +15,9 @@ const quizData = [
       correctAnswerIndex: 1
     },
     {
-      question: "Which method can be used to add a new element to an array?",
-      answers: [".push()", ".pop()", ".shift()", ".unshift()"],
-      correctAnswerIndex: 0
+      question: "The condition in an if / else statement is enclosed within _____.",
+      answers: ["quotes", "curly brackets", "parentheses", "square brackets"],
+      correctAnswerIndex: 2
     },
     {
       question: "What is the output of the following code?\nconsole.log(2 + 3 + '4');",
