@@ -50,7 +50,11 @@ When the start button is clicked, it will call the startQuiz() function.
 When the submit button is clicked, it will call the saveScore() function. */
   document.getElementById("start-button").addEventListener("click", startQuiz);
   submitButton.addEventListener("click", saveScore);
-  
+
+
+/* This block elaborates on the startQuiz() function. The initial values of the about "lets" will be set here.
+It will then hide the start screen and proceed to the quiz screen. A timer will start and it will update timeLeft every second.
+After all this the showQuestion() function will be called next. */
   function startQuiz() {
     currentQuestionIndex = 0;
     timeLeft = 60;
@@ -63,7 +67,8 @@ When the submit button is clicked, it will call the saveScore() function. */
   
     showQuestion();
   }
-  
+
+/* */
   function showQuestion() {
     const questionData = quizData[currentQuestionIndex];
   
