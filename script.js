@@ -1,3 +1,5 @@
+/* This first block is declaring the quizData constant which is the questions and anwsers of the quiz. 
+The answers are in the form of an array and the correctAnswerIndex is the correct answer based on its number in the array */
 const quizData = [
     {
       question: "Commonly used data types DO NOT include:",
@@ -26,6 +28,7 @@ const quizData = [
     }
   ];
   
+// In this second block there are constants set for various elements of the quiz inside index.html file.
   const quizScreen = document.getElementById("quiz-screen");
   const questionText = document.getElementById("question-text");
   const answerButtons = document.getElementById("answer-buttons");
@@ -35,11 +38,15 @@ const quizData = [
   const scoreText = document.getElementById("score");
   const submitButton = document.getElementById("submit-score");
   
+/* This block sets up variables for the current question index, the time left in the quiz, the timer interval, and the score. 
+These variables will be updated as the quiz progresses. */
   let currentQuestionIndex;
   let timeLeft;
   let timerInterval;
   let score;
   
+/* Here the start quiz and submit score buttons are given event listeners to react to user clicks. 
+*/
   document.getElementById("start-button").addEventListener("click", startQuiz);
   submitButton.addEventListener("click", saveScore);
   
