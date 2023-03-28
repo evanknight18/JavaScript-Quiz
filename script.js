@@ -68,7 +68,11 @@ After all this the showQuestion() function will be called next. */
     showQuestion();
   }
 
-/* */
+/* In the showQuestion() function, it will get the current question data from the quizData based on 
+currentQuestionIndex. It will then set the text of the question text element to the current question
+and will also remove any existing answer buttons from the element answer button. After this, it will loop
+through each answer in the current question and create a new button for each answer. 
+The checkAnswer() function will be called, adding an event listener to the new buttons. */
   function showQuestion() {
     const questionData = quizData[currentQuestionIndex];
   
@@ -86,6 +90,12 @@ After all this the showQuestion() function will be called next. */
     });
   }
   
+/* When the user selects an answer button, the checkAnswer() function is called. 
+It will retrieve the first question and if answered correctly it will add 10 points to the score variable.
+Otherwise it will subtract 10 from the timeLeft variable. 
+It will then look to see if it needs to proceed to the next question 
+or end the quiz based on the time left or if there are no questions.
+*/
   function checkAnswer(answerIndex) {
     const questionData = quizData[currentQuestionIndex];
   
@@ -103,6 +113,9 @@ After all this the showQuestion() function will be called next. */
     }
   }
   
+/* This is the end of quiz function. It is called when the quiz is over. 
+When this happens it clears the timer, hides the quiz screen, shwos the game over screen, 
+and then sets the text content of the score text to the final score. */
   function endQuiz() {
     clearInterval(timerInterval);
   
@@ -111,7 +124,10 @@ After all this the showQuestion() function will be called next. */
   
     scoreText.textContent = score;
   }
-  
+
+/* The updateTimer() function is called every second by the timer interval set up earlier in startQuiz().
+It decrements the timeLeft variable, updates the text content of the time left, 
+and calls endQuiz() if the time left is zero */
   function updateTimer() {
     timeLeft--;
     timeLeftText.textContent = timeLeft;
@@ -120,7 +136,12 @@ After all this the showQuestion() function will be called next. */
       endQuiz();
     }
   }
-  
+
+/* The final function is called when the user submits their score. The prevent default is set in place.
+The user types their initials in the input field and trims any white space from it. 
+If not blank, it retrieves any existing high score from local storage otherwise it will start an empty array.
+Then the new high score with the user's initials will be pushed and saves the updated array.
+After all this is completed, the user will be redirected to the high scores page html file */
   function saveScore(event) {
     event.preventDefault();
   
