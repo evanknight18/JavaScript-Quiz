@@ -46,7 +46,8 @@ These variables will be updated as the quiz progresses. */
   let score;
   
 /* Here the start quiz and submit score buttons are given event listeners to react to user clicks. 
-*/
+When the start button is clicked, it will call the startQuiz() function. 
+When the submit button is clicked, it will call the saveScore() function. */
   document.getElementById("start-button").addEventListener("click", startQuiz);
   submitButton.addEventListener("click", saveScore);
   
